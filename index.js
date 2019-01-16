@@ -65,6 +65,7 @@ function createServer(config) {
         try
         {
             sshConnection.connect(config);
+            server.emit('connected', true)
         }catch(error)
         {
             server.emit('error', error);
